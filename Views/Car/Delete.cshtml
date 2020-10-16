@@ -1,0 +1,86 @@
+﻿@model HarryAngelGarage.Models.Car
+<link rel="stylesheet" href="~/Content/samestyle.css">
+@{
+    ViewBag.Title = "Usuń samochód";
+}
+
+<h2>Jesteś pewny, że chcesz usunąć ten samochód?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Worker.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Worker.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarHandInDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarHandInDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BodyStyleType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BodyStyleType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy", "Index")
+        </div>
+    }
+</div>

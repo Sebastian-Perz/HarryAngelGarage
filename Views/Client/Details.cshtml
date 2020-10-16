@@ -1,0 +1,79 @@
+﻿@model HarryAngelGarage.Models.Client
+<link rel="stylesheet" href="~/Content/samestyle.css">
+@{
+    ViewBag.Title = "Szczegóły klienta";
+}
+
+<h2>Szczegóły wybranego klienta:</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cars)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Lakiernik przypisany:</th>
+                    <th>Marka:</th>
+                    <th>Model</th>
+                    <th>Nadwozie:</th>
+                </tr>
+                @foreach (var item in Model.Cars)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Worker.FirstName)
+                            @Html.DisplayFor(modelItem => item.Worker.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Brand)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Model)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BodyStyleType)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>

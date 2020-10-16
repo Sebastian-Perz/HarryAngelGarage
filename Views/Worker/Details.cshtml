@@ -1,0 +1,57 @@
+﻿@model HarryAngelGarage.Models.Worker
+<link rel="stylesheet" href="~/Content/samestyle.css">
+@{
+    ViewBag.Title = "Szczegóły pracownika";
+}
+
+<h2>Szczegóły wybranego pracownika</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Garage.GarageID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Garage.GarageID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.WorkerID }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>

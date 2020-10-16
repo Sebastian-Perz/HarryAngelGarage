@@ -1,0 +1,84 @@
+﻿@model HarryAngelGarage.Models.Car
+<link rel="stylesheet" href="~/Content/samestyle.css">
+
+@{
+    ViewBag.Title = "Szczegóły";
+}
+
+<h2>Szczegóły wybranego samochodu</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarHandInDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarHandInDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BodyStyleType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BodyStyleType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+
+        <dt>
+            <br />
+            @Html.DisplayNameFor(model => model.Worker.FullName)
+        </dt>
+
+        <dd>
+            <br />
+            @Html.DisplayFor(model => model.Worker.FullName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.CarID }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>
